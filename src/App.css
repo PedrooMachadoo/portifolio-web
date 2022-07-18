@@ -1,0 +1,330 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:normal,black,light');
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2%;
+  display: flex;
+}
+
+.main {
+  padding: 40px 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.025);
+  box-shadow: 3px 10px 8px rgba(0, 0, 0, 0.227);
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.item-menu{
+  text-decoration: none;
+}
+
+.item-menu:hover{
+  color: rgb(255, 111, 0);
+}
+
+.menu a {
+  color: rgb(0, 0, 0);
+  margin: 0 10px;
+}
+
+.foto-eu{
+  background-color: rgb(72, 72, 74);
+  background-image: url("./pedro2.png");
+  height: 900px;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.apresentacao {
+  width: 100vw;
+  height: 80vh;
+  margin-top: 40px;
+  padding-top: 10%;
+  padding-right: 20%;
+  padding-left: 20%;
+}
+
+.titulo-apresentacao{
+  font: normal bold normal 60px 'Nunito';
+  
+}
+
+.titulo-apresentacao2{
+  font: normal bold normal 60px 'Nunito';
+  color: rgb(255, 111, 0);
+}
+
+.titulo-apresentacao-flex{
+  display: flex;
+}
+
+.subtitulo-apresentacao{
+  font: normal light normal 24px 'Nunito';
+  font-size: 24px;
+  margin-top: 10px;
+  letter-spacing:8px;
+}
+
+.curriculo{
+  max-width: 960px;
+  margin:-20% 0 auto 10%;
+  text-align: center;
+  color: white;
+  background-color: #E8653C;
+  padding: 11% 18%;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.656);
+  position: absolute;
+}
+
+.texto-curriculo{
+  line-height: 200%;
+  margin-bottom: 8%;
+}
+
+.botao{
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 5px;
+  margin-top: 10%;
+  
+}
+.profissional{
+  width: 100%;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-color: blueviolet;
+  background-image: url("./foto-profissional.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 900px;
+  padding-top: 25%;
+}
+
+.profissional-titulo{
+  font-size: 55px;
+  padding-top: 25px;
+}
+
+.profissional-subtitulo{
+  font-size: 24px;
+  letter-spacing:10px;
+  margin-bottom: 5%;
+}
+
+.texto-categoria{
+  margin: 25px;
+}
+
+.portifolio{
+  width: 100%;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+}
+
+.portifolio-titulo{
+  font-size: 55px;
+  padding-top: 100px;
+  color: #000000;
+}
+
+.portifolio-subtitulo{
+  font-size: 24px;
+  letter-spacing:10px;
+  margin-bottom: 5%;
+  color: #000000;
+}
+
+
+.produtos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5%;
+  padding: 5px 4px;
+  width: 100%;
+ 
+}
+
+.texto-produtos{
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.texto-produtos:hover{
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.656);
+}
+
+.time-line{
+  background-image: url("./foto-neve.jpg");
+  background-color: rgb(132, 7, 7);
+  background-position: center;
+  background-size: cover;
+  min-height: 2000px;
+}
+
+.experiencia-titulo{
+  width: 100%;
+  text-align: center;
+  font-size: 55px;
+  padding-top: 100px;
+  color: #000000;
+}
+
+.experiencias{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.experienca-ano{
+  font: normal bold normal 16px 'Nunito';
+  color: rgb(255, 111, 0);
+  margin-bottom: 16px;
+}
+
+.experienca-empresa{
+  font: normal bold normal 24px 'Nunito';
+  margin-bottom: 10px;
+}
+
+.experienca-Cargo{
+font: normal bold normal 15px 'Nunito';
+ margin-bottom: 5px;
+}
+
+.experienca-descricao{
+font: normal normal normal 15px 'Nunito';
+
+}
+
+.colunas-experiencias-esquerda-visivel{
+  text-align: right;
+  text-justify: auto;
+}
+
+.colunas-experiencias-esquerda-invisivel{
+  height: 250px;
+}
+
+.colunas-experiencias-direita-visivel{
+  text-align: left;
+  text-justify: auto;
+}
+
+.colunas-experiencias-direita-invisivel{
+  height: 250px;
+}
+
+
+.traco-meio{
+  background-color: #E8653C;
+  border-radius: 5px;
+  width: 0.4%;
+  margin:0 4%;
+}
+
+
+.contato-formulario{
+  background-color: rgb(255, 255, 255);
+  background-position: center;
+  background-size: cover;
+}
+
+.contato{
+  max-width: 960px;
+  margin: -20% 0 auto 10%;
+  color: white;
+  background-color: #E8653C;
+  padding: 11% 18%;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.656);
+  display: flex;
+  flex-direction: column;
+  
+  position: absolute;
+}
+
+
+
+.contato-titulo{
+  font-size: 24px;
+  padding-top: 25px;
+}
+
+.texto-descricao{
+  margin-top: 5%;
+  line-height: 150%;
+}
+
+.texto-dados{
+  margin-top: 5%;
+  line-height: 150%;
+}
+
+
+
+.contato-icone{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  margin-top: 15%;
+  padding: 5px 4px;
+  width: 100%;
+  
+  
+}
+
+.rede-social{
+
+  max-width: 40px;
+  max-height: 40px;
+  
+}
+
+.rodape{
+  width: 100%;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-color: blueviolet;
+  background-image: url("./foto-profissional.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 450px;
+  padding-top: 25%;
+}
+
+.direitos{
+  padding-top: 6%;
+
+}
+
+.App {
+  background-color: rgb(72, 72, 74);
+  background-image: url("./pedro2.png");
+  background-position: center;
+  background-size: cover;
+}
