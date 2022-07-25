@@ -1,15 +1,56 @@
 import instagram from './instagram-icone.png';
 import linkedin from './linkedin-icone.png';
 import whatsapp from './whatsapp-icone.png';
-import banner from './pedro2.png';
+import zam from './mockup-zam.jpg';
+import zam2 from './mockup-zam2.jpg';
+import curriculo from './Curriculo-pedro-2.pdf';
+import produto from './case-zam.pdf'
 
 import { Col, Container, Row, Button, Form } from 'react-bootstrap';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
+import React, { useState } from 'react'
+
+
+
+function reveal() {
+  let reveals = document.querySelectorAll(".reveal");
+
+  for (let i = 0; i < reveals.length; i++) {
+    let windowHeight = window.innerHeight;
+    let elementTop = reveals[i].getBoundingClientRect().top;
+    let elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
 function App() {
+
+  const [fName, setfName] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+
+  const submitValue = () => {
+    const frmdetails = {
+      'First Name': fName,
+      'descricao': descricao,
+      'Phone': phone,
+      'Email': email
+    }
+    console.log(frmdetails);
+  }
+
+
   return (
     <Container fluid className="nopadding">
       <div className="App">
@@ -20,9 +61,9 @@ function App() {
                 <div>
                   <a className="item-menu" href='/'>HOME</a>
                   <a className="item-menu" href='#profissional'>PROFISSIONAL</a>
-                  <a className="item-menu" href='/'>EXPERIÊNCIA</a>
-                  <a className="item-menu" href='/'>PORTIFÓLIO</a>
-                  <a className="item-menu" href='/'>CONTATO</a>
+                  <a className="item-menu" href='/#portifolio'>PORTIFÓLIO</a>
+                  <a className="item-menu" href='/#experiencia'>EXPERIÊNCIA</a>
+                  <a className="item-menu" href='/#contato'>CONTATO</a>
                 </div>
               </div>
             </div>
@@ -35,7 +76,7 @@ function App() {
                 <h2 className="titulo-apresentacao">Pedro Antônio</h2>
                 <h2 className="titulo-apresentacao2">.</h2>
               </div>
-              <p className="subtitulo-apresentacao">UI/UX DESIGNER</p>
+              <p className="subtitulo-apresentacao">UX/UI DESIGNER</p>
             </Col>
           </Row>
         </div>
@@ -52,7 +93,9 @@ function App() {
                 </Row>
                 <Row>
                   <Col className='texto-curriculo2'>
-                    <a className="botao"> Baixar curriculo</a>
+                    {/*<a className="botao"> Baixar curriculo</a>*/}
+                    <a target='blank' href={curriculo}><button type="button" className="btn btn-outline-dark botao-curriculo" >Baixar curriculo</button></a>
+                    {/*<iframe src={download}></iframe>*/}
                   </Col>
                 </Row>
               </Col>
@@ -74,27 +117,27 @@ function App() {
           </div>
         </div>
 
-        <div className="portifolio">
+        <div className="portifolio" id="portifolio">
           <h3 className="portifolio-titulo">PORTIFÓLIO</h3>
           <p className="portifolio-subtitulo"> MEUS ÚLTIMOS TRABALHOS</p>
 
           <div className='produtos'>
-            <img src={instagram} className="texto-produtos"></img>
-            <img src={instagram} className="texto-produtos"></img>
-            <img src={instagram} className="texto-produtos"></img>
+            <a target='blank' href={produto}><img src={zam2} className="texto-produtos"></img></a>
+            <img src={zam2} className="texto-produtos"></img>
+            {/*<img src={zam} className="texto-produtos"></img>*/}
           </div>
         </div>
 
-        <div className='time-line'>
-          <h3 className="experiencia-titulo">EXPERIÊNCIA</h3>
+        <div className='time-line' id="experiencia">
+          <h3 className="experiencia-titulo reveal">EXPERIÊNCIA</h3>
 
-          <div className='experiencias'>
+          <div className='experiencias reveal'>
             <div>
               <div className='colunas-experiencias-esquerda-invisivel'>
                 {/*espaço vazio*/}
               </div>
 
-              <div className='colunas-experiencias-esquerda-visivel'>
+              <div className='colunas-experiencias-esquerda-visivel reveal'>
                 <p className="experienca-ano">2018 - 2019</p>
                 <p className="experienca-empresa">AGÊNCIA CÓSMICA</p>
                 <p className="experienca-Cargo">Estágio Design Gráﬁco</p>
@@ -105,7 +148,7 @@ function App() {
                 {/*espaço vazio*/}
               </div>
 
-              <div className='colunas-experiencias-esquerda-visivel'>
+              <div className='colunas-experiencias-esquerda-visivel reveal'>
                 <p className="experienca-ano">2019 - 2021</p>
                 <p className="experienca-empresa">PROMOVA COMUNICAÇÃO</p>
                 <p className="experienca-Cargo">Design</p>
@@ -116,10 +159,10 @@ function App() {
                 {/*espaço vazio*/}
               </div>
 
-              <div className='colunas-experiencias-esquerda-visivel'>
-                <p className="experienca-ano">2017 - 2018</p>
-                <p className="experienca-empresa">ROTA MÍDIA</p>
-                <p className="experienca-Cargo">Estágio Design Gráﬁco</p>
+              <div className='colunas-experiencias-esquerda-visivel reveal'>
+                <p className="experienca-ano">2021 - Atual</p>
+                <p className="experienca-empresa">ZAM</p>
+                <p className="experienca-Cargo">UX/UI Designer</p>
                 <p className="experienca-descricao">O trabalho tinha como foco a produção de <br></br> templates para mídia exterior como outdoor,<br></br> outbus, backbus, entre outros, porém o trabalho ia <br></br> além, mostrando e ensinando o estagiário a como <br></br> eram as técnicas de impressão do mesmo, para <br></br> melhor resultado do produto final.</p>
               </div>
 
@@ -128,7 +171,7 @@ function App() {
             <div className='traco-meio'> </div>
 
             <div>
-              <div className='colunas-experiencias-direita-visivel'>
+              <div className='colunas-experiencias-direita-visivel reveal'>
                 <p className="experienca-ano">2017 - 2018</p>
                 <p className="experienca-empresa">ROTA MÍDIA</p>
                 <p className="experienca-Cargo">Estágio Design Gráﬁco</p>
@@ -137,7 +180,7 @@ function App() {
 
               <div className='colunas-experiencias-direita-invisivel'>{/*espaço vazio*/}</div>
 
-              <div className='colunas-experiencias-direita-visivel'>
+              <div className='colunas-experiencias-direita-visivel reveal'>
                 <p className="experienca-ano">2019 - 2020</p>
                 <p className="experienca-empresa">TUCCI+ BRANDING</p>
                 <p className="experienca-Cargo">Design Gráﬁco</p>
@@ -146,10 +189,10 @@ function App() {
 
               <div className='colunas-experiencias-direita-invisivel'>{/*espaço vazio*/}</div>
 
-              <div className='colunas-experiencias-direita-visivel'>
-                <p className="experienca-ano">2017 - 2018</p>
-                <p className="experienca-empresa">ROTA MÍDIA</p>
-                <p className="experienca-Cargo">Estágio Design Gráﬁco</p>
+              <div className='colunas-experiencias-direita-visivel reveal'>
+                <p className="experienca-ano">2021 - 2022</p>
+                <p className="experienca-empresa">MOMU.</p>
+                <p className="experienca-Cargo">UX/UI Designer</p>
                 <p className="experienca-descricao">O trabalho tinha como foco a produção de <br></br> templates para mídia exterior como outdoor,<br></br> outbus, backbus, entre outros, porém o trabalho ia <br></br> além, mostrando e ensinando o estagiário a como <br></br> eram as técnicas de impressão do mesmo, para <br></br> melhor resultado do produto final.</p>
               </div>
 
@@ -168,7 +211,7 @@ function App() {
                   <div className="coluna">
                     <h5 className='contato-titulo'>Contato</h5>
                     <p className="texto-descricao">Gostou do meu trabalho? <br></br>​entra em contado  e vamos <br></br>mudar o mundo  juntos!</p>
-                    <p className='texto-dados'>pedro.machado1108@gmail.com <br></br>Tel: (81) 9 9883-8259</p>
+                    <p className='texto-dados'>Dev.pedro1108@gmail.com <br></br>Tel: (81) 9 9883-8259</p>
                   </div>
                 </Col>
                 <Col className='texto-curriculo'>
@@ -176,27 +219,27 @@ function App() {
                     <Row className='itens-formulario  mb-2'>
                       <Col md={6} className="">
                         <Form.Group controlId="formBasicEmail">
-                          <Form.Control type="text" placeholder="Nome" />
+                          <Form.Control type="text" placeholder="Nome"  onChange={e => setfName(e.target.value)} />
                         </Form.Group>
                       </Col>
                       <Col md={6} className="">
                         <Form.Group controlId="formBasicEmail">
-                          <Form.Control type="tel" placeholder="Telefone" />
+                          <Form.Control type="tel" placeholder="Telefone"  onChange={e => setPhone(e.target.value)} />
                         </Form.Group>
                       </Col>
                     </Row>
                     <Row className='itens-formulario  mb-2'>
                       <Form.Group controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Email" />
+                        <Form.Control type="text" placeholder="Email"  onChange={e => setEmail(e.target.value)} />
                       </Form.Group>
                     </Row>
                     <Row className='itens-formulario mb-2'>
                       <Form.Group controlId="formBasicEmail">
-                        <Form.Control as="textarea" rows={3} placeholder="Descrição" />
+                        <Form.Control as="textarea" rows={3} placeholder="Descrição"   onChange={e => setDescricao(e.target.value)}/>
                       </Form.Group>
                     </Row>
                     <Row className='mx-1'>
-                      <Button variant="dark" size="lg" type="submit">Enviar</Button>
+                      <Button className='corbotao' variant="dark" size="lg" type="submit">Enviar</Button>
                     </Row>
                   </Form>
                 </Col>
@@ -247,12 +290,13 @@ function App() {
         </div>
       </div>
     */}
-        <div className="rodape">
+        <div className="rodape" id="contato">
           <p className="direitos">© Direito Pedro Antônio - 2022</p>
         </div>
       </div >
     </Container>
   );
 }
+
 
 export default App;
