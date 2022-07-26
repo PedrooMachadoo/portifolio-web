@@ -239,7 +239,7 @@ function App() {
                       </Form.Group>
                     </Row>
                     <Row className='mx-1'>
-                      <Button className='corbotao' variant="dark" size="lg" type="submit">Enviar</Button>
+                      <Button className='corbotao' variant="dark" size="lg" onClick={submitValue}>Enviar</Button>
                     </Row>
                   </Form>
                 </Col>
